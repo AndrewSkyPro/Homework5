@@ -10,15 +10,16 @@ const lesserNumbers = (a, b) => {
 
 console.log(lesserNumbers(4, 8));
 
-const lesserNumbers2 = (a, b) => {
-    if (a = b) {
-        return a, b;
-    } else {
-        false;
+const lesserNumberss = (a, b) => {
+    if (a > b) {
+        return a;
     }
+    return b;
 }
 
-console.log(lesserNumbers2(6, 6));
+console.log(lesserNumberss(8,1));
+console.log(lesserNumberss(2,7));
+console.log(lesserNumberss(10,10));
 
 //задание 2
 
@@ -33,20 +34,24 @@ const modulesFromNumbers = (n) => {
 console.log(modulesFromNumbers(3));
 console.log(modulesFromNumbers(4));
 
-//задание 3.1
+//задание 3
 
-const squareNumber = (c) => c**2;
-console.log(squareNumber(8));
+function squareNumber1 (c) {
+    console.log(c**2);
+}
 
-//Задание 3.2
+squareNumber1(8);
 
-//?
+const eightSquared = (c) => c**2;
+
+console.log(eightSquared(8));
+
 
 //Задание 4
 
 function enterYourAge() {
     let userAge = Number(prompt('Сколько вам лет?'));
-    if (userAge < 0) {
+    if (isNan(userAge) || userAge < 0) {
         alert('Вы ввели неправильное значение');
     } else if (userAge >= 0 && userAge < 12) {
         alert('Привет, друг!');
@@ -59,24 +64,32 @@ enterYourAge();
 
 //Задание 5
 
-const numbers = (c, d) => c * d;
+const d = Number(prompt('Введите первое число'));
+const f = Number(prompt('Введите второе число'));
 
-numbers(8, 5);
-
-//Задание 6
-
-function whatNumber() {
-    let userAnswer = prompt('Введите число');
-    let result = userAnswer ** 3;
-    
-    if (userAnswer >= 0 && userAnswer < 10) {
-        return(`${userAnswer} в кубе равняется ${result}`);
+function twoNumbers(d, f) {
+    if (!isNaN(d) && !isNaN(f)) {
+        return alert(d * f);
     } else {
-        return('Переданный параметр не является числом');
+        alert('Одно или оба значения не являются числом');
     }
 }
 
-whatNumber();
+twoNumbers(d, f);
+
+
+//Задание 6
+
+const whatNumberTest = (a) => {
+    if (isNaN(a) || a === null)
+        return('Переданный параметр не является числом');
+        return(`${a} в кубе равняется ${a ** 3}`);
+}
+
+for (let i = 0; i <= 10; i++) {
+    console.log(whatNumberTest(i));
+}
+
 
 
 
